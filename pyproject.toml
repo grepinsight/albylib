@@ -24,7 +24,7 @@ classifiers = [
   "Programming Language :: Python :: Implementation :: CPython",
   "Programming Language :: Python :: Implementation :: PyPy",
 ]
-dependencies = []
+dependencies = ["pandas", "ipyparallel"]
 
 [project.urls]
 Documentation = "https://github.com/unknown/albylib#readme"
@@ -38,7 +38,9 @@ path = "albylib/__about__.py"
 dependencies = [
   "coverage[toml]>=6.5",
   "pytest",
-  "scikit-learn"
+  "scikit-learn",
+  "pandas",
+  "ipyparallel"
 ]
 [tool.hatch.envs.default.scripts]
 test = "pytest {args:tests}"

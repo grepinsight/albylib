@@ -14,6 +14,8 @@ def move_columns(df: pd.DataFrame, cols_to_move: list, new_index: int) -> pd.Dat
         a dataframe with the columns re-arranged
     """
     other = [c for c in df if c not in cols_to_move]
+    if new_index > (len(df.columns) - 1) or new_index < 0:
+        raise IndexError("Index is out of range")
     start = other[0:new_index]
     end = other[new_index:]
     return df[start + cols_to_move + end]

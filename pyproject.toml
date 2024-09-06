@@ -24,7 +24,7 @@ classifiers = [
   "Programming Language :: Python :: Implementation :: CPython",
   "Programming Language :: Python :: Implementation :: PyPy",
 ]
-dependencies = ["pandas", "ipyparallel"]
+dependencies = []
 
 [project.urls]
 Documentation = "https://github.com/unknown/albylib#readme"

@@ -46,7 +46,7 @@ class Octopus:
         self.client = self.cluster.connect_client_sync()
         self.view = self.client.load_balanced_view()
 
-    def map_sync(self, func, iterable):
+    def map_sync(self, func, *args, **kwargs):
         """
         Maps a function to an iterable using the load-balanced view synchronously.
 
@@ -62,9 +62,9 @@ class Octopus:
         """
         if self.view is None:
             raise RuntimeError("Octopus has not been started. Call start() method first.")
-        return self.view.map_sync(func, iterable)
+        return self.view.map_sync(func, *args, **kwargs)
 
-    def map_async(self, func, iterable):
+    def map_async(self, func, *args, **kwargs):
         """
         Maps a function to an iterable using the load-balanced view asynchronously.
 
@@ -80,7 +80,7 @@ class Octopus:
         """
         if self.view is None:
             raise RuntimeError("Octopus has not been started. Call start() method first.")
-        return self.view.map_async(func, iterable)
+        return self.view.map_async(func, *args, **kwargs)
 
     def stop(self):
         """
